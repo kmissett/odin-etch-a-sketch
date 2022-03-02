@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Project Etch-a-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Etch-a-Sketch</h1>
+        <p class="description">Move over the Etch-a-Sketch to change the pixel colors. Click the button to clear. To change the resolution, use the input. Note: changing the resolution will clear the screen too.</p>
+        <form id="resolution-form"><input type="number" name="resolution" id="resolution" min="8" max="128" placeholder="16"><label for="resolution">Resolution (8-128)</label></form>
+        <button class="button clear">Clear screen</button>
+
+    </header>
+    <main>
+        <div class="etch-a-sketch">
+            <div class="screen"></div>
+            <div class="knob horizontal"></div>
+            <div class="knob vertical"></div>
+        </div>
+    </main>
+</body>
+</html>

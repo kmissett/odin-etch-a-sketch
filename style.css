@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: hsl(120, 25%, 5%);
+    --color-bg: hsl(120, 25%, 95%);
+    --color-accent: hsl(0, 95%, 40%);
+    
+    --font-titles: "Oswald", sans-serif;
+    --font-primary: "EB Garamond", serif;
+    --font-size: clamp(1.25rem, 1rem + 3vw, 1.75rem);
+    --font-size-sm: calc(0.8 * var(--font-size));
+    --font-size-lg: calc(1.25 * var(--font-size));
+    --line-height: 1.5;
+
+}
+
+body {
+    width: 100%;
+    background-color: var(--color-bg);
+    font-family: var(--font-primary);
+    font-size: var(--font-size);
+    color: var(--color-primary);
+    line-height: var(--line-height);
+}
+
+header, main, footer {
+    margin-inline: auto;
+    padding-inline: 1rem;
+    width: 100%;
+    max-width: 70ch;
+    margin-block-end: 1em;
+}
+
+h1,h2,h3 {
+    font-family: var(--font-titles);
+    border-block-end: 0.25rem solid var(--color-accent);
+    margin-block-end: 1rem;
+}
+
+.etch-a-sketch {
+    background-color: var(--color-accent);
+    position: relative;
+    width: min-content;
+    margin-inline: auto;
+    padding: 4rem 4rem 8rem;
+}
+
+.etch-a-sketch {
+    --animation-timing: 500ms;
+    animation: shake var(--animation-timing) ease-in-out paused;
+}
+
+.screen {
+    background-color: hsl(0, 0%, 80%);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+@keyframes shake {
+    20% {transform: translateY(-5%);}
+    40% {transform: translateY(5%);}
+    60% {transform: translateY(-10%);}
+    80% {transform: translateY(10%);}
+    100% {transform: translateY(0);}
+}
+
+
+
+.pixel {
+    --opacity: 0;
+    opacity: var(--opacity);
+}
+
+.knob {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    inset-block-end: 2.5rem;
+}
+.horizontal {inset-inline-start: 2.5rem;}
+.vertical { inset-inline-end: 2.5rem; }
