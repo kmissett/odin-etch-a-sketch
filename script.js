@@ -52,13 +52,16 @@ resolutionForm.addEventListener("submit", (e) => {
 
 
 const clearButton = document.querySelector(".clear")
-clearButton.addEventListener("click", () => {
-        removePixels()
-        const resolutionValue = resolution.value ? resolution.value : 16
-        drawPixels(parseInt(resolutionValue))
-        resolution.value = resolutionValue
+clearButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    etchASketch.classList.add("shake")
+    pixels.forEach(pixel => pixel.style.setProperty("--opacity", 0))
+    e.target.blur()
 })
 
+etchASketch.addEventListener("animationend", () => {
+    etchASketch.classList.remove("shake")
+})
 
 
 

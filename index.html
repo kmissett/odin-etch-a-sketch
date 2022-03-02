@@ -10,11 +10,20 @@
 </head>
 <body>
     <header>
-        <h1>Etch-a-Sketch</h1>
-        <p class="description">Move over the Etch-a-Sketch to change the pixel colors. Click the button to clear. To change the resolution, use the input. Note: changing the resolution will clear the screen too.</p>
-        <form id="resolution-form"><input type="number" name="resolution" id="resolution" min="8" max="128" placeholder="16"><label for="resolution">Resolution (8-128)</label></form>
+        <h1 class="page-title">Etch-a-Sketch</h1>
+        <p class="description">Move over the Etch-a-Sketch with your mouse to change the pixel colors. Click the button to clear. To change the resolution, use the input. Note: changing the resolution will clear the screen too.</p>
+        <form id="resolution-form" class="resolution-form">
+            <label for="resolution">Resolution (8-100)</label>
+            <input type="number" name="resolution" id="resolution" class="resolution" min="8" max="100" placeholder="16" list="defaultNumbers">
+            <datalist id="defaultNumbers">
+                <option value="8">
+                <option value="16">
+                <option value="32">
+                <option value="64">
+                <option value="100">
+            </datalist>
+        </form>
         <button class="button clear">Clear screen</button>
-
     </header>
     <main>
         <div class="etch-a-sketch">
